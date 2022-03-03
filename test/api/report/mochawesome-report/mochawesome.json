@@ -1,0 +1,278 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-03T04:24:01.000Z",
+    "end": "2022-03-03T04:24:01.008Z",
+    "duration": 8,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5e41b4c9-b070-402c-aeb7-737d157e23aa",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4af9d546-8407-4e91-b93e-947449d7cb5a",
+          "title": "Addition surprise box",
+          "fullFile": "/home/juanfgalloexpe/Documentos/jobs/udea/pruebas/unit/orders-cases/tests/unit/addition.test.ts",
+          "file": "/tests/unit/addition.test.ts",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Total value > 200.000 add surprise box",
+              "fullTitle": "Addition surprise box Total value > 200.000 add surprise box",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let actualResult = addition_1.validateAdditionSurpriseBox(addition_mock_1.orderMock200k);\nchai_1.expect(actualResult).to.equal(\"Congratulations!!! He takes a surprise box\");",
+              "err": {},
+              "uuid": "1efb7fa0-615e-48b3-a88c-9428cb0affc0",
+              "parentUUID": "4af9d546-8407-4e91-b93e-947449d7cb5a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Total value < 200.000 not add surprise box",
+              "fullTitle": "Addition surprise box Total value < 200.000 not add surprise box",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let actualResult = addition_1.validateAdditionSurpriseBox(addition_mock_1.orderMock100k);\nchai_1.expect(actualResult).to.equal(\"Sorry, you need more purchases to get a surprise box\");",
+              "err": {},
+              "uuid": "cf31b2ec-e2fb-49b8-a3f7-cea2c14ac0cc",
+              "parentUUID": "4af9d546-8407-4e91-b93e-947449d7cb5a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1efb7fa0-615e-48b3-a88c-9428cb0affc0",
+            "cf31b2ec-e2fb-49b8-a3f7-cea2c14ac0cc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2e7b5ba4-a1eb-4ada-915b-30a338a02b3c",
+          "title": "discount in total sale",
+          "fullFile": "/home/juanfgalloexpe/Documentos/jobs/udea/pruebas/unit/orders-cases/tests/unit/discount-in-sale.test.ts",
+          "file": "/tests/unit/discount-in-sale.test.ts",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "must get 20% of discount",
+              "fullTitle": "discount in total sale must get 20% of discount",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let discount = appliance_discount_1.default.validateApplianceQuantity(discount_mock_1.applianceDiscountOrder);\nchai_1.assert(discount === 20);",
+              "err": {},
+              "uuid": "4f1676f3-7705-4538-99bb-df20c363f2fb",
+              "parentUUID": "2e7b5ba4-a1eb-4ada-915b-30a338a02b3c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "must get 0% of discount",
+              "fullTitle": "discount in total sale must get 0% of discount",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let discount = appliance_discount_1.default.validateApplianceQuantity(discount_mock_1.applianceNotDiscountOrder);\nchai_1.assert(discount === 0);",
+              "err": {},
+              "uuid": "1c21a047-2a4a-4b39-a907-7a91e81c18a2",
+              "parentUUID": "2e7b5ba4-a1eb-4ada-915b-30a338a02b3c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4f1676f3-7705-4538-99bb-df20c363f2fb",
+            "1c21a047-2a4a-4b39-a907-7a91e81c18a2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "58e212b4-a533-42d6-a303-a564c47640b2",
+          "title": "Discount cheapest product",
+          "fullFile": "/home/juanfgalloexpe/Documentos/jobs/udea/pruebas/unit/orders-cases/tests/unit/example.test.ts",
+          "file": "/tests/unit/example.test.ts",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Just one product and purchase is greater than 100000",
+              "fullTitle": "Discount cheapest product Just one product and purchase is greater than 100000",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let actualResult = discounts_1.calculateDiscountTwoProductsWithPurchasesgreaterThan100k(order_mock_1.orderMockOneProduct);\nchai_1.expect(actualResult).to.equal(60000);",
+              "err": {},
+              "uuid": "fe693d5d-dc17-4127-8270-e6e5cfd83a66",
+              "parentUUID": "58e212b4-a533-42d6-a303-a564c47640b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Two products and purchase is greater than 100000, products sorted descending by price",
+              "fullTitle": "Discount cheapest product Two products and purchase is greater than 100000, products sorted descending by price",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let actualResult = discounts_1.calculateDiscountTwoProductsWithPurchasesgreaterThan100k(order_mock_1.orderMockTwoProductsGreaterThan100k);\nchai_1.expect(actualResult).to.equal(14070);",
+              "err": {},
+              "uuid": "0d1df21a-af35-4632-991c-90e87daed29b",
+              "parentUUID": "58e212b4-a533-42d6-a303-a564c47640b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Two products and purchase is greater than 100000, products sorted ascending by price",
+              "fullTitle": "Discount cheapest product Two products and purchase is greater than 100000, products sorted ascending by price",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let actualResult = discounts_1.calculateDiscountTwoProductsWithPurchasesgreaterThan100k(order_mock_1.orderMockTwoProductsGreaterThan100kDiffSort);\nchai_1.expect(actualResult).to.equal(14070);",
+              "err": {},
+              "uuid": "b8bfb3c3-550d-4121-8328-02647bb469bc",
+              "parentUUID": "58e212b4-a533-42d6-a303-a564c47640b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Two products and purchase is less or equal than 100000",
+              "fullTitle": "Discount cheapest product Two products and purchase is less or equal than 100000",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let actualResult = discounts_1.calculateDiscountTwoProductsWithPurchasesgreaterThan100k(order_mock_1.orderMockTwoProductsLessOrEqualThan100k);\nchai_1.expect(actualResult).to.equal(19000);",
+              "err": {},
+              "uuid": "956c2aae-677c-432e-b68c-f494ffb52f70",
+              "parentUUID": "58e212b4-a533-42d6-a303-a564c47640b2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fe693d5d-dc17-4127-8270-e6e5cfd83a66",
+            "0d1df21a-af35-4632-991c-90e87daed29b",
+            "b8bfb3c3-550d-4121-8328-02647bb469bc",
+            "956c2aae-677c-432e-b68c-f494ffb52f70"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.0"
+    },
+    "marge": {
+      "options": {
+        "overwrite": "false",
+        "html": "false",
+        "json": "true",
+        "reportDir": "test/api/report/mochawesome-report"
+      },
+      "version": "6.1.0"
+    }
+  }
+}
