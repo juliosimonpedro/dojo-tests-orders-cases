@@ -14,8 +14,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run coverage
-      - sonarcloud/scan:
-          sonar_token_variable_name: SONAR_TOKEN 
+      - sonarcloud/scan
 
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
