@@ -126,7 +126,7 @@ provider:
   runtime: nodejs14.x
 
 functions:
-  {nombre}-function-cicd:
+    {nombre}-function-cicd:
     handler: src/app.handler
 ```
 6. Posteriormente cree el archivo de worfklow en las rutas especificadas anteriormente `.github/workflows`
