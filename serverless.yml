@@ -6,5 +6,5 @@ provider:
   runtime: nodejs14.x
 
 functions:
-    lambda-jsp-function-cicd:
+    jspfunction:
     handler: src/app.handler
