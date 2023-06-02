@@ -1,0 +1,10 @@
+service: clean cloud CI/CD AWS deploy
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+    lambda-jsp-function-cicd:
+    handler: src/app.handler
