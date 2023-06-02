@@ -30,8 +30,8 @@ jobs:
 
 ## Step 2: Test Build
 
-1. Crear una nueva rama que contenga los test `git checkout -b feat/{nombre}-test` desde master
-2. Pegar este código en un el archivo .yml 
+1. Crear una nueva rama llamada `git checkout -b feat/{nombre}-test` desde master
+2. Pegar este código en un el archivo .yml dentro de la ruta `.github/workflows/`
 ```
 name: Clean cloud cicd
 
@@ -57,4 +57,40 @@ jobs:
       - run: npm test
 ```
 3. Hacer push de la nueva rama con `git push origin feat/{nombre}-test`
-4. Crearpull request hacia master
+4. Crear pull request hacia master
+
+## Step 3: Test + Basic build
+
+1. Crear una nueva rama que se llame `git checkout -b feat/{nombre}-test_build`
+2. Pegar este código en un el archivo .yml dentro de la ruta `.github/workflows/`
+```
+  name: Clean cloud cicd
+
+  on:
+    push:
+      branches: [ master ]
+    pull_request:
+      branches: [ master ]
+
+  jobs:
+    test:
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [14.x]
+      steps:
+        - uses: actions/checkout@v3
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
+        - run: npm ci
+        - run: npm test
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: A future implementation of a build stage
+          run: echo "run build"
+```
+3. Hacer push de la nueva rama con `git push origin feat/{nombre}-test_build`
+4. Crear pull request hacia master
