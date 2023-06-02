@@ -180,3 +180,6 @@ functions:
 ```
 8. Fue compartido un arhcivo csv llamado `lambda-deployer_accessKeys.csv` el cual contiene tokens de acceso de un usuario de IAM creado específicamente para este dojo, abra este archivo.
 9. Dirigase a <i> settings > Secrets and variables > Actions </i>
+10. Añadirá dos secretos donde dice `New Repository secret` en los cuales pondrá como nombre `AWS_ACCESS_KEY_ID` y `AWS_SECRET_ACCESS_KEY` en dos secretos aparte, y en secreto pondrá el valor que aparece en el archivo `.csv`
+11. Hacer push de la nueva rama con `git push origin feat/{nombre}-aws-deploy`
+12. Realizar pull request con master
