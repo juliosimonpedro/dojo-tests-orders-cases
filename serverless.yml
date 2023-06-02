@@ -1,4 +1,4 @@
-service: clean cloud CI/CD AWS deploy
+service: clean-cloud-cicd-jsp
 frameworkVersion: '3'
 
 provider:
