@@ -57,3 +57,4 @@ jobs:
       - run: npm test
 ```
 3. Hacer push de la nueva rama con `git push origin feat/{nombre}-test`
+4. Crearpull request hacia master
