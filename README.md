@@ -8,7 +8,7 @@
 4. Hacer un push a github de esta rama `git push origin feat/{nombre}-basic` si tiene doble autenticación use el token en github. 
 5. Crear un nuevo archivo .yml en la ruta `.github/workflows/` y pegar el código
 ```
-name: Clean cloud cicd
+name: Clean cloud CI/CD Basic Build
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
 1. Crear una nueva rama llamada `git checkout -b feat/{nombre}-test` desde master
 2. Pegar este código en un el archivo .yml dentro de la ruta `.github/workflows/`
 ```
-name: Clean cloud cicd
+name: Clean cloud CI/CD Test
 
 on:
   push:
@@ -64,7 +64,7 @@ jobs:
 1. Crear una nueva rama que se llame `git checkout -b feat/{nombre}-test_build`
 2. Pegar este código en un el archivo .yml dentro de la ruta `.github/workflows/`
 ```
-  name: Clean cloud cicd
+  name: Clean cloud CI/CD Step 3 Build and Test
 
   on:
     push:
