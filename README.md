@@ -102,7 +102,7 @@ jobs:
 
 ## Step 4: Deploy en AWS
 
-1. Crear una nueva rama que se llame `git checkout -b feat/{nombre}-aws-deploy`
+1. Crear una nueva rama que se llame `git checkout -b feat/{nombre}-aws_deploy`
 2. crear un archivo que se llame `app.js` en la ruta `src/`
 3. Pegar el siguiente código en el archivo 
 ```
