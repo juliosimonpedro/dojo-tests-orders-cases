@@ -5,9 +5,11 @@ Para todos los pasos de este dojo usted debe de contar con cuenta en GitHub y ad
 1. Hacerle Fork a este repo https://github.com/jufegare000/dojo-tests-orders-cases
 2. Hacerle pull a ese repositorio de manera local `git pull https://github.com/{username}/dojo-tests-orders-cases.git`
 
-Recuerde que si usted cuenta con doble autenticación, en los pasos de realizar push; debe de utilizar en su password un Token obtenido desde los developer settings en github
+Recuerde que si usted cuenta con doble autenticación, en los pasos de realizar push; debe de utilizar en su password un Token obtenido desde los developer settings en github.
 
 ## Step 1 Basic Build
+
+En este step se hará un build básico en dónde el único step es un echo "hello world" el cual se va a poder revisar desde GitHub Actions.
 
 1. Crear una nueva rama desde master `git checkout -b feat/{nombre}-basic`
 2. Crear un nuevo archivo .yml en la ruta `.github/workflows/` y pegar el código
@@ -34,6 +36,7 @@ jobs:
 4. Crear un pull request desde la nueva rama hacia máster. 
 
 ## Step 2: Test Build
+
 
 1. Crear una nueva rama llamada `git checkout -b feat/{nombre}-test` desde master
 2. Pegar este código en un el archivo .yml dentro de la ruta `.github/workflows/`
@@ -102,6 +105,8 @@ jobs:
 
 ## Step 4: Deploy en AWS
 
+En este paso, se harán los test y el build mencionados en los pasos anteriores, pero se le va a agregar el deploy en AWS de una lambda que contiene una función de js llamada `handler`. 
+
 1. Crear una nueva rama que se llame `git checkout -b feat/{nombre}-aws_deploy`
 2. crear un archivo que se llame `app.js` en la ruta `src/`
 3. Pegar el siguiente código en el archivo 
@@ -118,7 +123,7 @@ export const handler = async(event) => {
 4. Posteriormente crear el archivo .yml que se llame `serverless.yml`
 5. Pegar el siguente código y tener en cuenta que donde dice `{nombre}` se debe de remplazar por su nombre o algo que permita que usted identifique su lambda
 ```
-service: clean cloud CI/CD AWS deploy
+service: clean-cloud-cicd-{nombre}
 frameworkVersion: '3'
 
 provider:
