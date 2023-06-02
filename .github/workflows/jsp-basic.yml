@@ -1,4 +1,4 @@
-name: Clean cloud cicd 1
+name: Clean cloud cicd
 
 on:
   push:
