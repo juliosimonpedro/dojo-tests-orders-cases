@@ -1,4 +1,4 @@
-name: Clean cloud cicd
+name: Clean cloud cicd 1
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build1:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
