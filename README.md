@@ -137,7 +137,7 @@ functions:
 6. Posteriormente cree el archivo de worfklow en las rutas especificadas anteriormente `.github/workflows`
 7. Pegue en él el siguiente código
 ```
-  name: Clean cloud cicd
+  name: Clean cloud CI/CD aws deploy
 
   on:
     push:
