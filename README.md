@@ -101,3 +101,82 @@ jobs:
 4. Crear pull request hacia master
 
 ## Step 4: Deploy en AWS
+
+1. Crear una nueva rama que se llame `git checkout -b feat/{nombre}-aws-deploy`
+2. crear un archivo que se llame `app.js` en la ruta `src/`
+3. Pegar el siguiente código en el archivo 
+```
+export const handler = async(event) => {
+    // TODO implement
+    const response = {
+        statusCode: 200,
+        body: JSON.stringify(event),
+    };
+    return response;
+};
+```
+4. Posteriormente crear el archivo .yml que se llame `serverless.yml`
+5. Pegar el siguente código y tener en cuenta que donde dice `{nombre}` se debe de remplazar por su nombre o algo que permita que usted identifique su lambda
+```
+service: clean cloud CI/CD AWS deploy
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  {nombre}-function-cicd:
+    handler: src/app.handler
+```
+6. Posteriormente cree el archivo de worfklow en las rutas especificadas anteriormente `.github/workflows`
+7. Pegue en él el siguiente código
+```
+  name: Clean cloud cicd
+
+  on:
+    push:
+      branches: [ master ]
+    pull_request:
+      branches: [ master ]
+
+  jobs:
+    test:
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [14.x]
+      steps:
+        - uses: actions/checkout@v3
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
+        - run: npm ci
+        - run: npm test
+    build:
+      needs: [test]
+      runs-on: ubuntu-latest
+      steps:
+        - name: A future implementation of a build stage
+          run: echo "run build"
+    deploy:
+      needs: [build]
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [14.x]
+      steps:
+        - uses: actions/checkout@v3
+        - name: Deploy to AWS
+          run: echo "Installing serverless framework"
+        - name: Install Serverless Framework
+          run: npm install -g serverless
+        - name: Deploy to AWS Lambda
+          run: serverless deploy
+          env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+```
+8. Fue compartido un arhcivo csv llamado `lambda-deployer_accessKeys.csv` el cual contiene tokens de acceso de un usuario de IAM creado específicamente para este dojo, abra este archivo.
+9. Dirigase a <i> settings > Secrets and variables > Actions </i>
