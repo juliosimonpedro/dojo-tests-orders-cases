@@ -1,0 +1,10 @@
+service: clean-cloud-cicd-jsp
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  jspfunction:
+    handler: src/app.handler
